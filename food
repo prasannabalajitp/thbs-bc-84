@@ -1,0 +1,11 @@
+$cat > food.txt
+Breakfast: Idli, Dosa, Ricebath, Sandwich.
+Luch     : Rice, Curry.
+Snacks   : Tea, Coffee,Bread, Cake.
+Dinner   : Idly, Dosa.
+
+$cat food.txt 
+Breakfast: Idli, Dosa, Ricebath, Sandwich.
+Luch     : Rice, Curry.
+Snacks   : Tea, Coffee,Bread, Cake.
+Dinner   : Idly, Dosa.
