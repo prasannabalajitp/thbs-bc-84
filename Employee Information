@@ -1,0 +1,4 @@
+#!bin/bash
+ename="Prasanna"
+eid=5945
+echo "Employee name : $ename and Employee ID : $eid"
