@@ -1,0 +1,72 @@
+user@user-virtual-machine:-/07Sept$ ls -l demo1.txt
+
+-rw-rw-r-- 1 user user 0 Sep 7 10:25 demo1.txt 
+user@user-virtual-machine:~/07Sept$ chmod u-w demo1.txt 
+user@user-virtual-machine:~/07Sept$ la -l demo1.txt
+
+-r--rw-r-- 1 user user 0 Sep 7 10:25 demo1.txt 
+user@user-virtual-machine:~/07Sept$ cat > demo1.txt
+
+bash: demo1.txt: Permission denied
+
+ user@user-virtual-machine:~/07Sept$ chmod a+rwx demo1.txt
+ user@user-virtual-machine:~/07Sept$ la -l demo1.txt
+
+-rwxrwxrwx 1 user user Sep 7 10:25 demo1.txt 
+user@user-virtual-machine:~/07Sept$ cat demo1.txt 
+user@user-virtual-machine:~/07Sept$ cat > demo1.txt
+
+varun
+
+rcb
+
+user@user-virtual-machine:~/07Sept$ cat demo1.txt
+
+varun
+
+rcb
+
+user@user-virtual-machine:~/07Sept$ chmod a-rwx demo1.txt
+
+user@user-virtual-machine:~/07Sept$ la -l demo1.txt 1 user user 11 Sep 7 14:48 demo1.txt
+
+user@user-virtual-machine: $ cat demo1.txt
+
+good morning
+
+good evening
+
+good night
+
+breakfast
+
+Lunch
+
+dinner user@user-virtual-machine: $ ls -l demo1.txt -rw-rw-r-- 1 user user 60 Sep 7 14:16 demo1.txt 
+user@user-virtual-machine: $ chmod 777 demo1.txt user@user-virtual-machine: $ ls -l demo1.txt 
+-rwxrwxrwx 1 user user 60 Sep 7 14:16 deno1.txt 
+user user-virtual-machine:-S chmod 664 demo1.txt 
+user@user-virtual-machine: $ ls -l demo1.txt 
+-rw-rw-r- 1 user user 60 Sep 7 14:16 demo1.txt. 
+user@user-virtual-machine: $ chmod 000 demol.txt 
+user@user-virtual-nachine: $ ls -l demo1.txt
+ --- 1 user user 60 Sep 7 14:16 demo1.txt
+ --W-W--W- 1 user user 60 Sep 7 14:16 demo1.txt
+
+user@user-virtual-machine: $ chmod 444 demo1.txt 
+user@user-virtual-nachine:-$ ls -l demo1.txt
+ -r--r--r-- 1 user user 60 Sep 7 14:16 demo1.txt user@user-virtual-machine: $ chmod 764 demo1.txt
+ user@user-virtual-machine: $ ls -l demo1.txt
+
+-rwxrw-r-- 1 user user 68 Sep 7 14:16 deno1.txt 
+user@user-virtual-nachine:-S chmod 664 demo1.txt.
+ user@user-virtual-machine: $ ls -l demo1.txt
+ -rw-rw-r- 1 user user 60 Sep 7 14:16 demo1.txt 
+user@user-virtual-machine: $ chmod a-w demo1.txt 
+user@user-virtual-nachine:-$ ls -1 demo1.txt
+
+user@user-virtual-machine: $ chmod ug-rw demo1.txt 
+user@user-virtual-machine:-$ ls -1 demo1.txt 
+-rw-rw--w- 1 user user 60 Sep 7 14:16 demo1.txt 
+user@user-virtual-machine: $ chmod or demo1.txt
+ user@user-virtual-nachine: $ ls -l demo1.txt
