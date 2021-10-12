@@ -26,7 +26,7 @@ public class App
     	//INSERTING A NEW TRAIN
     	Train train = new Train();
     	train.setTrainNo(1007);
-    	train.setTrainName("Pandiyan");
+    	train.setTrainName("Pandiyan Express");
     	train.setSource("Madurai");
     	train.setDestination("Chennai");
     	train.setPrice(850);
@@ -36,7 +36,7 @@ public class App
     	
     	Train train1 = new Train();
     	train1.setTrainNo(1008);
-    	train1.setTrainName("Nellai");
+    	train1.setTrainName("Nellai Express");
     	train1.setSource("Tirunelveli");
     	train1.setDestination("Chennai");
     	train1.setPrice(900);
