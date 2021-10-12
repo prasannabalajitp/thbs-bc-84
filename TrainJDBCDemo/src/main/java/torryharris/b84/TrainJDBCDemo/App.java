@@ -16,12 +16,13 @@ public class App
     	
     	
     	Train search = dao.select(1001);
-    	System.out.println(search.getTrainNo()+"	"+search.getTrainName()+"	"+search.getSource()
-    						+"	"+search.getDestination()+"	"+search.getPrice());
-    	
+    	System.out.println("Train no. : "+search.getTrainNo()+"\t"+"Train Name : "+search.getTrainName()+"\t"+"From : "+search.getSource()
+    						+"\t"+"Destination : "+search.getDestination()+"\t"+"Price : "+search.getPrice());
+    	System.out.println();
     	Train search1 = dao.select(1003);
-    	System.out.println(search1.getTrainNo()+"	"+search.getTrainName()+"	"+search1.getSource()
-    						+"	  "+search1.getDestination()+"	"+search.getPrice());
+    	System.out.println("Train no. : "+search1.getTrainNo()+"\t"+"Train Name : "+search.getTrainName()+"\t"+"From : "+search1.getSource()
+    						+"\t"+"To : "+search1.getDestination()+"\t"+"Price : "+search.getPrice());
+    	System.out.println();
     	
     	//INSERTING A NEW TRAIN
     	Train train = new Train();
