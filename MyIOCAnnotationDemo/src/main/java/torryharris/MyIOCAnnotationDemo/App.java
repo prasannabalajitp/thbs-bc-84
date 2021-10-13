@@ -29,7 +29,6 @@ public class App
     	
     	
     	System.out.println(customer);
-    	context.close();
     	
     	Customer customer1 = (Customer)context.getBean("customer");
     	customer1.setCustID("1002");
