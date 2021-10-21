@@ -11,9 +11,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 
-public class Ticket {
+public class Ticket<totalPrice> {
     private int count = 0;
     private String pnr;
+    private  double totalPrice;
     @Setter
     private String travelData;
     private Train train;
@@ -31,59 +32,37 @@ public class Ticket {
 
     }
 
-    private String generatePNR(){
+    private String generatePNR() {
         connection = DBManager.getConnection();
         File file = new File("C:\\Users\\user118\\Desktop\\count.txt");
 
+        int count = new Random().nextInt(1000)+1000;
 
-        try (FileReader fileReader = new FileReader(file);
-             BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-        ) {
-
-            String str = bufferedReader.readLine();
-            //System.out.println(str);
-
-            if (str == null) {
-                count = 100;
-            } else {
-
-                count = Integer.parseInt(str.trim()) + 1;
-            }
-            System.out.println(count);
-            FileWriter fileWriter = new FileWriter(file);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(String.valueOf(count));
-//            fileWriter.close();
- //           bufferedWriter.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//
 
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("" +
-                    "select * from trains where TRAIN_NO = " + train.getTrainNo());
+                    "select *from trains where TRAIN_NO = " + train.getTrainNo());
 
 
             while (resultSet.next()) {
 
 
-                ArrayList<String> arrayDate=new ArrayList<>();
+                ArrayList<String> arrayDate = new ArrayList<>();
                 StringTokenizer stringTokenizer = new StringTokenizer(travelData, "/");
 
-                while (stringTokenizer.hasMoreElements()){
+                while (stringTokenizer.hasMoreElements()) {
                     arrayDate.add(stringTokenizer.nextToken());
                 }
 
 
                 pnr = String.valueOf(resultSet.getString(3).charAt(0)).toUpperCase() +
                         String.valueOf(resultSet.getString(4).charAt(0)).toUpperCase()
-                        + "_" + arrayDate.get(2)+arrayDate.get(1)+arrayDate.get(0)+
+                        + "_" + arrayDate.get(2) + arrayDate.get(1) + arrayDate.get(0) +
                         "_" + count;
 
-                System.out.println(pnr);
+                //System.out.println(pnr);
                 return pnr;
 
 
@@ -129,6 +108,19 @@ public class Ticket {
         return totalPrice;
     }
 
+    public double totalTicketPrice()
+    {
+        double totalTicketPrice = 0.0;
+        System.out.println(passengers);
+        for(double p : passengers.values())
+        {
+
+            totalTicketPrice += p;
+        }
+
+        return totalTicketPrice;
+    }
+
     private StringBuilder generateTicket() {
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -145,8 +137,10 @@ public class Ticket {
     }
 
     public void writeTicket() {
+        //String pnr = generatePNR();
+        StringBuilder stringBuilder = generateTicket();
+        File file = new File("C:\\Users\\user118\\Desktop", pnr+".txt");
 
-        File file = new File("C:\\Users\\user118\\Desktop", "ticket.txt");
         try {
             file.createNewFile();
         } catch (IOException e) {
@@ -156,7 +150,7 @@ public class Ticket {
         try (FileWriter fileWriter = new FileWriter(file, true);
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
 
-            StringBuilder stringBuilder = generateTicket();
+
 
 
             bufferedWriter.newLine();
@@ -179,21 +173,19 @@ public class Ticket {
 
             bufferedWriter.write("Name          Age         Gender          Fare");
             bufferedWriter.newLine();
+
             for (Passenger passenger : passengers.keySet()) {
 
-                bufferedWriter.write(passenger.getName()+"      ");
-                bufferedWriter.write(String.valueOf(passenger.getAge())+"       ");
-                bufferedWriter.write(passenger.getGender()+"        ");
-                bufferedWriter.write(String.valueOf(passengers.get(passenger))+"        ");
+                bufferedWriter.write(passenger.getName() + "      ");
+                bufferedWriter.write(String.valueOf(passenger.getAge()) + "       ");
+                bufferedWriter.write(passenger.getGender() + "        ");
+                bufferedWriter.write(String.valueOf(passengers.get(passenger)) + "        ");
                 bufferedWriter.newLine();
 
 
             }
 
             bufferedWriter.write("Total Price:  " + calculateTotalTicketPrice());
-
-
-
 
 
             //  bufferedWriter.write(String.valueOf(stringBuilder));
@@ -205,8 +197,6 @@ public class Ticket {
 
 
     }
-
-
 
 
 }
