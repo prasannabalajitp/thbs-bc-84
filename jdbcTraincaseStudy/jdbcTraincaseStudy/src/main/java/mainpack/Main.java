@@ -62,12 +62,13 @@ import java.util.Scanner;
                 date = sc.nextInt();
                 System.out.println("Enter the month (mm) of the travel : ");
                 month = sc.nextInt();
-                System.out.println("Enter the year (yyyy) of the trave;");
+                System.out.println("Enter the year (yyyy) of the travel :");
                 year = sc.nextInt();
                 gregorianCalendar=new GregorianCalendar(year, month,date);
+
                 if((gregorianCalendar.compareTo(new GregorianCalendar()))>0)
                 {
-
+                    System.out.println("Your travel date is : "+date+"/"+month+"/"+year);
                     break;
                 }
                 else
@@ -88,13 +89,13 @@ import java.util.Scanner;
         ticket=new Ticket(train, date +"/"+month+"/"+year);
         for(int i=0;i<numOfPass;i++)
         {
-            System.out.println("Enter the Passenger Name : ");
+            System.out.println("Enter the NAME of the Passenger "+(i+1)+" : ");
             String passName = sc.next();
 
-            System.out.println("Enter the age of the Passenger : ");
+            System.out.println("Enter the AGE of the Passenger "+(i+1)+" : ");
             int passAge = sc.nextInt();
 
-            System.out.println("Enter the gender of the Passenger : (Type 'M' or 'F') : " );
+            System.out.println("Enter the GENDER of the Passenger "+(i+1)+" : (Type 'M' or 'F') : " );
             char passGen = sc.next().charAt(0);
 
             while(true)
@@ -113,8 +114,9 @@ import java.util.Scanner;
 
             }
         }
+
         ticket.writeTicket();
         System.out.println("Ticket Booked Successfully.");
-
+        System.out.println("Total Ticket Price : "+ ticket.totalTicketPrice());
     }
 }
