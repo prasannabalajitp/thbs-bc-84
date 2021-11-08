@@ -43,7 +43,7 @@ public class TrainController {
 		return new ResponseEntity<List<Train>>(tlist, HttpStatus.OK);
 	}
 	
-	@GetMapping("/getTrainByNumber/{id}}")
+	@GetMapping("/getTrainByNumber/{id}")
 	public ResponseEntity<Train> getTrainByNumber(@PathVariable int id){
 		Optional<Train> tk = tr.findById(id);
 		
