@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking ticket</title>
+    <link rel="stylesheet" href="/src/main/webapp/styles.css">
+    <link rel="stylesheet" href="/path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="icon" href="https://www.irctc.co.in/nget/assets/images/secondry-logo.png" />
+    <!--JAVASCRIPT BEGINS-->
+
+    <!--JavaScript Ends-->
+</head>
+<body>
+
+<img src="https://www.irctc.co.in/nget/assets/images/logo.png" alt="irctc_icon" style="float:right;width:120px;height:140px;padding-right:50px;padding-top:5px;">
+<!--HEADINGS-->
+<h1 style="color:blue;text-align:center;font-size:50px;padding-top:35px;">ONLINE RAIL TICKET BOOKING PORTAL</h1>
+
+<!-MARQUEE FIELD--->
+<div>
+    <sub class="supplementary"><marquee scrollamount="10"  class="scrolltext">Ticket Booking Portal for the Passengers</marquee></sub>
+</div>
+<!-FORM BEGINS--->
+
+<iframe src="trainDetails.html" width="100%" height="500px"></iframe>
+
+<form name="printTicket" action="printTicket.html" onsubmit="return checkDetails();" method="post" id="container">
+    <h3 align="center" class="detailheader">ENTER THE TRAIN DETAILS HERE...</h3><br>
+    <table align="center">
+        <tr>
+
+            <td style=""><i class="fas fa-train"></i>&nbsp;&nbsp;Train Number</td>
+
+            <td>
+                <select style="border-radius: 6px;" name="train" required>    <!--RECTIFIED-->
+                    <option style="text-align:center;" value="">--select--</option>
+                    <option value="1001">1001 - SHATABDI Express (BGL-DLH) </option>
+                    <option value="1002">1002 - SHATABDI Express (DLH-BGL)</option>
+                    <option value="1003">1003 - UDYAN Express (BGL-MUM)</option>
+                    <option value="1004">1004 - UDYAN Express (MUM-BGL)</option>
+                    <option value="1005">1005 - BRINDAVAN Express (BGL-CHN)</option>
+                    <option value="1006">1006 - BRINDAVAN Express (CHN-BGL)</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><i class="far fa-calendar-alt"></i>    Travel Date</td>
+
+            <td>
+                <input type="date" id="travel_date" style="border-radius: 6px;" required>
+            </td>
+        </tr>
+    </table>
+
+
+<br>
+<br>
+<br>
+
+<hr width="1000px">
+<!--PASSENGER DETAILS-->
+<h3 align="center"  class="detailheader">ENTER THE PASSENGER DETAILS HERE...</h3>
+
+<div align="center" style="padding-left:30px;"><i class="fas fa-user-friends"></i>
+    Enter the Number of Passengers : <input type="number" id="number" name="number" value="" min="1" max="12" style="border-radius: 6px;" required> (Max. 12 Persons)
+    <br><br>
+    <a href="#" id="pass" onclick="addPassengers()" style="text-decoration:none;#pass:hover{color:red;text-decoration:none;-webkit-text-stroke: 2px #000000}">Fill Passenger Details</a><br><br>
+    <div id="contain" style="padding-left:30px;"/>
+
+</div>
+<hr width="1000px">
+<div align="center">
+    <button type="submit" value="BOOK THE TICKET"  class="button" >BOOK THE TICKET</button>
+    <button type="reset" value="CANCEL"  class="button">CANCEL</button>
+
+</div>
+
+</form>
+<script type='text/javascript'>
+    var today = new Date();
+    var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+
+if (dd < 10) {
+   dd = '0' + dd;
+}
+
+if (mm < 10) {
+   mm = '0' + mm;
+}
+
+today = yyyy + '-' + mm + '-' + dd;
+document.getElementById("travel_date").setAttribute("min", today);
+
+
+
+function addPassengers()
+{
+        // Number of inputs to create
+    var number = document.getElementById("number").value;
+
+    // Container where dynamic content will be placed
+    var container = document.getElementById("contain");
+
+    // Clear previous contents of the container
+    while (container.hasChildNodes())
+    {
+        container.removeChild(container.lastChild);
+    }
+    if(number <= 12)
+    {
+    for (var i=0;i<number;i++)
+    {
+        //TO CREATE THE NAME INPUT TAG
+
+        container.appendChild(document.createTextNode((i+1)+"."+" Name : "));
+        var input = document.createElement("input");
+        input.type = "text";
+        input.id = "name" + i;
+        input.required = true;
+        container.appendChild(input);
+
+        //TO CREATE THE AGE INPUT TAG
+
+        container.appendChild(document.createTextNode("\tAge : "));
+        var input1 = document.createElement("input");
+        input1.type = "number";
+        input1.name = "age" + i;
+        input1.min = 1;
+        input1.max = 102;
+        input1.required = true;
+        container.appendChild(input1);
+
+        //TO  CREATE THE GENDER RADIO BUTTON
+
+        container.appendChild(document.createTextNode("\tGender : "));
+        const favicon = document.querySelector('[rel=icon]');
+        var input2 = document.createElement("input");
+        input2.type = "radio";
+        input2.value = "Male" + i;
+        input2.name = "Gender" + i;
+        input2.id = "Gender" + i;
+        input2.required = true;
+        container.appendChild(input2);
+
+        container.appendChild(document.createTextNode(" Male "));
+        //container.appendChild("<i class="fas fa-male" aria-hidden="true"></i>");
+
+
+        //For displaying the Female RADIO button
+        var input2 = document.createElement("input");
+        input2.type = "radio";
+        input2.value = "Female" + i;
+        input2.name = "Gender" + i;
+         input2.id = "Gender" + i;
+        container.appendChild(input2);
+        container.appendChild(document.createTextNode(" Female "));
+
+
+        // Append a line break
+        container.appendChild(document.createElement("br"))
+        container.appendChild(document.createElement("br"));
+        }
+    }
+    else
+    {
+        alert("Maximum number of passengers is 12");
+    }
+
+}
+
+function checkDetails()
+{
+    var check = document.getElementById("number").value;
+
+    if(check === 0 || check === null)
+    {
+        alert("Please fill the details");
+        return false;
+
+    }
+    else{
+         if(!document.body.contains(document.getElementById("name"+(parseInt(check)-1)))){
+           alert("Please click on Fill Passengers details");
+
+           return false;
+         }else{
+         return true;
+         }
+    }
+    return true;
+
+
+}
+
+</script>
+</body>
+</html>

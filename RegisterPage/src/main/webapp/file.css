@@ -1,0 +1,32 @@
+*{
+	text-align: center;
+}
+
+.table1 tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+.table1 th{
+color:white;
+background-color:black;
+}
+
+.con{
+	background-color: #f2f2f2
+}
+
+table {
+  border-spacing: 1;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.table1 thead{
+  background-color: black;
+  font-size: 18px;
+  color: white;
+}
