@@ -32,6 +32,10 @@ public class Ticket<totalPrice> {
 
     }
 
+    public String getPnr() {
+        return pnr;
+    }
+    
     private String generatePNR() {
         connection = DBManager.getConnection();
         File file = new File("C:\\Users\\user118\\Desktop\\count.txt");
