@@ -116,7 +116,7 @@ import java.util.Scanner;
         }
 
         ticket.writeTicket();
-        System.out.println("Ticket Booked Successfully.");
+        System.out.println("Ticket Booked Successfully with PNR : "+ticket.getPnr());
         System.out.println("Total Ticket Price : "+ ticket.totalTicketPrice());
     }
 }
