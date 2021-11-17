@@ -13,7 +13,7 @@ font-family : "Roboto";
 
 
 
-    #uname,#psw,#age,#gender,#email {
+    #uname,#psw,#age,#gender,#email, #trainNo, #trainName, #source, #destination, #price, #remove {
 
       width: 100%;
 
@@ -35,9 +35,9 @@ font-family : "Roboto";
 
     button {
 
-      background-color: #4caf50;
+      background-color: #5BB40B   ;
 
-      color: white;
+      color: #fff;
 
       padding: 14px 20px;
 
@@ -57,7 +57,9 @@ font-family : "Roboto";
 
     button:hover {
 
-      opacity: 0.8;
+      /*opacity: 0.8;
+      */background-color: #0ae90a ;
+      font-size : 20px;
 
     }
 
@@ -71,18 +73,28 @@ font-family : "Roboto";
 
     }
 
+
+    .top-btn
+    {
+        border: none;
+        outline:none;
+        background-color:#fff;
+        cursor:pointer;
+    }
+
+    .top-btn:hover
+    {
+        //cursor:pointer;
+    }
     .imgcontainer {
 
-      text-align: center;
-
-      margin: 24px 0 12px 0;
-
+      float: center;
     }
 
     .container {
-
-      padding: 16px;
-
+        margin-left : 350px;
+        margin-right : 320px;
+/*        padding : 50px 300px 20px 200px;*/
     }
 
 
@@ -100,7 +112,46 @@ font-family : "Roboto";
       float: right;
 
     }
+    .zoom {
+      padding: 50px;
+      background-color: transparent;
+      transition: transform .9s; /* Animation */
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
 
+    .zoom:hover {
+          transform: scale(1.8); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+    .dot {
+      height: 10px;
+      width: 10px;
+      background-color: rgba(0,0,0,0);
+      border-radius: 0%;
+      display: inline-block;
+    }
+    .zoom1
+    {
+          padding: 50px;
+          background-color: transparent;
+          transition: transform .9s; /* Animation */
+          width: 200px;
+          height: 200px;
+          margin: 0 auto;
+        }
+
+    .zoom1:hover {
+              transform: scale(1.8); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+              /*background-color:	#DCDCDC;*/
+            }
+    .dot1 {
+          height: -12px;
+          width: -12px;
+          background-color: rgba(0,0,0,0);
+          border-radius: 0%;
+          display: inline-block;
+        }
 
 
     @media screen and (max-width: 300px) {
@@ -115,7 +166,7 @@ font-family : "Roboto";
 
       .cancelbtn {
 
-        width: 100%;
+          width: 100%;
 
       }
 
