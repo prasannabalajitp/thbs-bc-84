@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Train(s)</title>
+    <link rel="stylesheet" href="/RegisterPage/src/main/webapp/style.css"/>
+    <link rel="icon" href="https://www.irctc.co.in/nget/assets/images/secondry-logo.png" />
+
+</head>
+<body>
+<div style="float:center;">
+
+    <img src="https://www.irctc.co.in/nget/assets/images/secondry-logo.png" style="margin-left:550px;"/>
+
+</div>
+<h1 style="text-align:center;">Add Train</h1><br>
+<form name="add" action="#" method="post">
+    <div class="container" align="center">
+
+        <br>
+        <label><b>&nbsp;Enter Train Number </b></label>&nbsp;
+        <input type="number" placeholder="Enter Train Number" id="trainNo" name="trainNo" min="1007" required><br><br>
+
+        <label></i><b>&nbsp;Enter Train Name</b></label>
+        <input type="text" id="trainName" placeholder="Enter Train Name" name="trainName" required><br><br>
+
+        <label><b>&nbsp;Source</b></label>
+        <input type="text" id="source" placeholder="Enter Source Station" name="source" required><br><br>
+
+        <label><b>&nbsp;Destination</b></label>
+        <input type="text" id="destination" placeholder="Enter Destination Station" name="destination" required><br><br>
+
+        <label><b>&nbsp;Price</b></label>
+        <input type="number" id="price" placeholder="Enter Ticket Price" name="price" required><br><br>
+
+        <button type="submit">Add</button>
+
+        <br>
+
+    </div>
+</form>
+</body>
+</html>
