@@ -1,0 +1,38 @@
+*{
+            font-family : "Roboto";
+        }
+        .button{
+         display:inline-flex;
+         height:50px;
+         padding : 0;
+         background:#0096FF;                //#0096FF
+         border:none;
+         outline:none;
+         border-radius:10px;
+         overflow:hidden;
+         font-family:'Roboto', sans-serif;
+         font-size:24px;
+         font-weight:500;
+         cursor:pointer;
+        }
+        .button:hover{
+            background:#0000FF;                 //#008168
+        }
+
+        .button:active{
+            background:#006e58;
+        }
+
+        .button__text,
+        .button__icon{
+            display:inline-flex;
+            align-items:center;
+            padding:0 10px;
+            color:#fff;
+            height:100%;
+        }
+
+        .button__icon{
+            font-size:1.8em;
+            align-items:center;
+        }

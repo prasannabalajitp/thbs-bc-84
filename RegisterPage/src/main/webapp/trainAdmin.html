@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add/Remove Train(s)</title>
+    <link rel="icon" href="https://www.irctc.co.in/nget/assets/images/secondry-logo.png" />
+    <link rel="stylesheet" href="/src/main/webapp/trainAdmin.css">
+</head>
+<body>
+    <div style="float:center;">
+        <img src="https://www.irctc.co.in/nget/assets/images/secondry-logo.png" style="margin-left:550px;"/>
+    </div>
+    <h3 align="center" style="font-size:45px;">Hi Admin,</h3>
+    <h4 align="center" style="font-size:30px;"><sub>Choose the operation that you wanna do, </sub></h4>
+
+        <div align="center">
+            <a href="/src/main/webapp/addTrain.html" style="text-decoration:none;">
+                <button type="submit" class="button" style="width:230px;" onclick="location.href='/src/main/webapp/addTrain.html'">
+                    <span class="button__text" style="padding-left:50px;">Add Train</span>         <!-- style="font-size:35px;"-->
+                    <span class="button__icon">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                    </span>
+                </button>
+            </a>
+        </div><br>
+        <div align="center">
+            <a href="/src/main/webapp/removeTrain.html" style="text-decoration:none;">
+                <button type="button" class="button" onclick="location.href='/src/main/webapp/removeTrain.html';">
+                    <span class="button__text">Remove Train</span>
+                    <span class="button__icon">
+                    <ion-icon name="remove-circle-outline"></ion-icon>
+                </span>
+                </button>
+            </a>
+        </div>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html>
