@@ -1,0 +1,6 @@
+logging:
+  level:
+    com.th.ws.consume.demo: INFO
+    org:
+      springframework:
+        ws: DEBUG
